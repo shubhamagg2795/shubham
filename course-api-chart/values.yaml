@@ -1,0 +1,23 @@
+replicaCount: 4
+
+image:
+  repository: shubhamdocker413/course-api
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 3000
+
+db:
+  host: metro.proxy.rlwy.net
+  port: "30894"
+  name: railway
+  user: postgres
+  password: lrLnFFATmLkshMLLLfvrjObootQEHKiD
+
+ingress:
+  enabled: true
+  host: courseapi.local
+  path: /
